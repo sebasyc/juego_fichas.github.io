@@ -1,0 +1,77 @@
+@mixin phone-s {
+	@media (max-width: 375px) {
+		@content;
+	}
+}
+@mixin phone-m {
+	@media (max-width: 480px) {
+		@content;
+	}
+}
+@mixin phone-l {
+	@media (max-width: 768px) {
+		@content;
+	}
+}
+@mixin tablet-port {
+	@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : portrait) {
+		@content;
+	}
+}
+@mixin tablet-land {
+	@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : landscape) {
+		@content;
+	}
+}
+
+@mixin transition($time) {
+	transition: $time;
+	-webkit-transition: $time;
+	-moz-transition: $time;
+}
+
+@mixin border-radius($radius) {
+	border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+}
+
+@mixin appearance($style){
+	appearance: $style;
+	-webkit-appearance: $style;
+	-moz-appearance: $style;
+}
+
+@mixin placeholder {
+  &:placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+@mixin center-x {
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+@mixin center-y {
+	top: 0;
+	bottom: 0;
+	margin: auto 0;
+}
+@mixin center-all {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+@mixin selection {
+	::selection {
+		@content;
+	}
+	::-moz-selection {
+		@content;
+	}
+}
